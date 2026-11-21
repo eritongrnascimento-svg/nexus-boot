@@ -1,0 +1,2 @@
+[alias]
+build-efi = "build --release --package nexus-efi --target x86_64-unknown-uefi"

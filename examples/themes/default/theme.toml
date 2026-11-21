@@ -1,0 +1,6 @@
+version = 1
+name = "Default"
+layout = "vertical"
+background = "#10151D"
+foreground = "#F4F7FA"
+accent = "#5FD9C9"
