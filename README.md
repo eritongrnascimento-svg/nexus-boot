@@ -100,15 +100,19 @@ O conjunto inclui carregadores EFI compatíveis e arquivos auxiliares reconhecid
 como grub.cfg e o BCD do Windows. O procedimento não restaura partições apagadas,
 dados do sistema, volumes criptografados ou registros de inicialização do firmware.
 
-## Capturas
+## Galeria
 
 ![Visão geral do Nexus Boot 0.3.3 no Windows](docs/capturas/windows-033-dashboard.png)
 
-[Discos](docs/capturas/windows-033-discos.png) · [Particionamento](docs/capturas/windows-033-particionamento.png) · [Sistemas](docs/capturas/windows-033-sistemas.png) · [Temas](docs/capturas/windows-033-temas.png) · [Recuperação](docs/capturas/windows-033-recuperacao.png)
+| Discos e partições | Particionamento |
+| --- | --- |
+| ![Mapa e tabela de partições](docs/capturas/windows-033-discos.png) | ![Prévia do particionamento](docs/capturas/windows-033-particionamento.png) |
+| **Temas e aparência** | **Sistemas operacionais** |
+| ![Editor e prévia de temas](docs/capturas/windows-033-temas.png) | ![Gerenciamento de perfis de boot](docs/capturas/windows-033-sistemas.png) |
+| **Gerenciador UEFI** | **Recuperação** |
+| ![Gerenciador UEFI durante uma consulta recusada pelo firmware](docs/capturas/windows-033-uefi.png) | ![Backup local e recuperação do boot](docs/capturas/windows-033-recuperacao.png) |
 
-![Painel de recuperação 0.3.1](docs/capturas/painel-recuperacao-031.png)
-
-![Seletor EFI com reparação de boot, capturado em QEMU](docs/capturas/seletor-efi-030.png)
+**Linux e UEFI.** [Painel de recuperação no Linux](docs/capturas/painel-recuperacao-031.png) · [Seletor EFI com reparação de boot em QEMU](docs/capturas/seletor-efi-030.png)
 
 ## Windows
 
