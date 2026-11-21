@@ -1,10 +1,18 @@
 # Nexus Boot
 
-Fundação em Rust para um gerenciador de inicialização UEFI. O seletor x86_64 detecta carregadores EFI compatíveis e permite escolher qual iniciar.
+Gerenciador de inicialização UEFI em Rust com painel administrativo para Windows e Linux. O seletor x86_64 detecta carregadores EFI compatíveis e permite escolher qual iniciar.
 
-Veja [arquitetura e formatos preliminares](docs/arquitetura.md) para o estado de
-cada componente. A Fase 1 não instala o produto, altera a NVRAM do host, grava
-em ESPs físicas ou seleciona sistemas operacionais.
+Veja a [arquitetura do projeto](docs/arquitetura.md).
+
+## Downloads
+
+A versão 0.3.3 oferece o painel portátil para Windows x64 e o instalador para
+Linux x86-64. Os binários, hashes SHA-256 e o código correspondente ficam na
+[release 0.3.3](https://github.com/eritongrnascimento-svg/nexus-boot/releases/tag/v0.3.3).
+
+No Windows, execute o arquivo .exe. No Linux, dê permissão de execução ao .run
+e abra-o a partir da sessão gráfica. Consulte as instruções abaixo antes de
+alterar partições ou entradas do firmware.
 
 ## Compilação
 
@@ -75,21 +83,6 @@ O instalador registra uma entrada EFI sem alterar BootOrder. Para incluí-la na 
 firmware, é preciso adicionar ou escolher a entrada pela opção de inicializar
 um arquivo EFI. O seletor EFI incorporado ainda não é assinado. Em Recuperação, use Atualizar seletor EFI e depois Definir Nexus como primeira opção de boot. O painel salva a ordem anterior e mostra a ordem confirmada pelo firmware. Em Recuperação, Diagnosticar boot UEFI consulta a versão do EFI e a prioridade atual sem gravar na ESP ou no firmware. Ao concluir a instalação, o próprio assistente permite mover o Nexus para o início ou para o fim. O seletor lista carregadores compatíveis, com setas para navegar, Enter para iniciar e Esc para retornar ao firmware.
 
-O Windows dispõe do inventário de discos. A instalação pelo painel no
-Windows, a edição de temas e mensagens e a proteção com recuperação
-continuam pendentes.
-
-## Validação da Fase 1
-
-A compilação de release com Rust 1.100.0 gerou a aplicação EFI x86_64.
-O teste em QEMU 10.2.1 com OVMF no Ubuntu do WSL confirmou o banner
-Nexus Boot 0.1.0 e o retorno ao menu do firmware. O script PowerShell
-foi verificado sintaticamente. A execução do QEMU nativo do Windows
-ainda não foi verificada.
-
-Referências: [alvos UEFI do Rust](https://doc.rust-lang.org/rustc/platform-support/unknown-uefi.html)
-e [guia do uefi-rs](https://rust-osdev.github.io/uefi-rs/tutorial/app.html).
-
 ### Reparação pelo seletor EFI
 
 Uma instalação nova tenta copiar os arquivos de boot compatíveis das ESPs FAT
@@ -106,15 +99,6 @@ versão encontrada no destino é preservada com o sufixo .nexus-previous.
 O conjunto inclui carregadores EFI compatíveis e arquivos auxiliares reconhecidos,
 como grub.cfg e o BCD do Windows. O procedimento não restaura partições apagadas,
 dados do sistema, volumes criptografados ou registros de inicialização do firmware.
-## Downloads
-
-A versão 0.3.3 oferece o painel portátil para Windows x64 e o instalador para
-Linux x86-64. Os binários, hashes SHA-256 e o código correspondente ficam na
-[release 0.3.3](../../releases/tag/v0.3.3).
-
-No Windows, execute o arquivo .exe. No Linux, dê permissão de execução ao .run
-e abra-o a partir da sessão gráfica. Consulte as instruções abaixo antes de
-alterar partições ou entradas do firmware.
 
 ## Capturas
 
@@ -142,7 +126,7 @@ partições usadas pelo Windows para iniciar.
 
 A instalação na ESP, o agendamento único e o backup dos arquivos EFI do sistema
 continuam disponíveis pelo painel Linux. A restauração no seletor funciona no
-ambiente UEFI quando há uma cópia compatível.
+ambiente UEFI quando há uma cópia compatível. As instruções de compilação preservam o ícone nativo quando o Windows SDK está disponível.
 
 ## Licença e identidade visual
 
