@@ -14,6 +14,25 @@ No Windows, execute o arquivo .exe. No Linux, dê permissão de execução ao .r
 e abra-o a partir da sessão gráfica. Consulte as instruções abaixo antes de
 alterar partições ou entradas do firmware.
 
+### Fedora 45 x86_64
+
+O RPM nativo da versão 0.3.3 pode ser instalado com:
+
+```bash
+sudo dnf install ./dist/nexus-boot-0.3.3-1.fc45.x86_64.rpm
+```
+
+Abra **Nexus Boot** pelo menu de aplicativos. A instalação do RPM põe o
+painel no sistema. As operações de disco e firmware são iniciadas no
+painel e passam pela confirmação e autenticação do Polkit.
+
+Para gerar o RPM no Fedora, instale `rpm-build` e execute:
+
+```bash
+cargo build --locked --release --package nexus-manager
+bash scripts/build-rpm.sh
+```
+
 ## Compilação
 
 Use Rust estável recente via rustup e, para o teste, QEMU x86_64 com OVMF.

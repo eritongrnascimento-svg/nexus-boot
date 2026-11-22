@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.eritongrnascimento_svg.NexusBoot</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>Nexus Boot</name>
+  <summary>Painel de gerenciamento da inicialização UEFI</summary>
+  <description>
+    <p>Consulte discos e partições, organize perfis de inicialização e
+    gerencie entradas UEFI. Inclui o seletor EFI do Nexus Boot.</p>
+  </description>
+  <launchable type="desktop-id">nexus-boot.desktop</launchable>
+  <developer id="io.github.eritongrnascimento_svg"><name>Ériton do Nascimento</name></developer>
+  <url type="homepage">https://github.com/eritongrnascimento-svg/nexus-boot</url>
+  <releases><release version="0.3.3" date="2026-11-21"/></releases>
+  <content_rating type="oars-1.1"/>
+</component>

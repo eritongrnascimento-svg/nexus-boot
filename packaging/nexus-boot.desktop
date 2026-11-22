@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Nexus Boot
+GenericName=Gerenciador de inicialização UEFI
+Comment=Consulte discos e gerencie entradas de inicialização UEFI
+Exec=nexus-boot
+Icon=nexus-boot
+Terminal=false
+Categories=System;
+Keywords=UEFI;EFI;boot;partições;
+StartupNotify=true
+StartupWMClass=nexus-boot
